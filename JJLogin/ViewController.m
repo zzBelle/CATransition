@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "JJLoginButton.h"
+#import "WaveViewController.h"
 
 @interface ViewController ()
 @property (nonatomic, strong) JJLoginButton *loginButton;
@@ -33,6 +34,9 @@
     //模拟耗时操作，比如请求登录接口，或存储登录信息
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.loginButton stopAnimation];
+
+        WaveViewController *waveVC = [[WaveViewController alloc] init];
+        [self.navigationController pushViewController:waveVC animated:true];
     });
 }
 
